@@ -82,6 +82,8 @@ CalculatePoints myCircle2;
 CalculatePoints myCircle3;
 CalculatePoints myCircle4; // used in step 9
 
+import processing.pdf.*;
+
 void setup() {
   background(255);
   noLoop(); 
@@ -90,6 +92,8 @@ void setup() {
   noFill();
   rectMode(CENTER);
   ellipseMode(CENTER);
+  
+  beginRecord(PDF, "design_240_v90.pdf");
 
   saveIntersectionX = new float[100]; // store x Points for the intersections
   saveIntersectionY = new float[100]; // store y Points for the intersections
@@ -144,6 +148,9 @@ void draw() {
   step12G(true);
   step12H(true);
   save("design_240_v090.png");
+  endRecord();
+  
+  // exit();
 }
 
 // Construct the Lineline object
